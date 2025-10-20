@@ -1,0 +1,229 @@
+
+:root {
+
+  --primary-color: #1E3A8A;    
+  --secondary-color: #2563EB;  
+  --accent-color: #FBBF24;    
+  --neutral-100: #F9FAFB;    
+  --neutral-200: #E5E7EB;     
+  --neutral-300: #9CA3AF;    
+  --neutral-400: #4B5563;     
+  --success-color: #10B981;    
+  --error-color: #EF4444;      
+
+
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-xxl: 64px;
+
+
+  --grid-columns: 12;
+  --grid-gap: var(--space-md);
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  color: var(--neutral-400);
+  background-color: var(--neutral-100);
+}
+
+h1, h2, h3, h4 {
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+h4 { font-size: var(--font-size-sm); }
+
+p {
+  margin-bottom: var(--space-sm);
+}
+
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: var(--font-size-lg);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: var(--space-md);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: var(--space-xs) 0;
+  }
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  grid-gap: var(--grid-gap);
+}
+
+section {
+  grid-column: span 12;
+  margin-bottom: var(--space-xl);
+}
+
+section img {
+  width: 100%;
+  height: auto;
+  margin-top: var(--space-sm);
+  border-radius: 8px;
+}
+
+
+form {
+  background-color: white;
+  padding: var(--space-lg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+fieldset {
+  border: 1px solid var(--neutral-200);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--primary-color);
+  padding: 0 var(--space-xs);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: var(--space-sm);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--neutral-200);
+  border-radius: 4px;
+  font-size: var(--font-size-sm);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+
+
+footer {
+  background-color: var(--neutral-200);
+  text-align: center;
+  padding: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--neutral-400);
+}
+
+
+article {
+  background-color: white;
+  padding: var(--space-md);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: var(--space-md);
+}
+
+article h4 {
+  margin-bottom: var(--space-xs);
+}
+
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--space-sm);
+  }
+
+  h1 { font-size: var(--font-size-lg); }
+  h2 { font-size: var(--font-size-md); }
+}
